@@ -1,0 +1,32 @@
+# application.yml
+spring:
+  profiles:
+    active: dev
+  application:
+    name: movie-svc
+#  flyway:
+#    enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/movie_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: root
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1
+
+server:
+  port: 8082
+
+mybatis:
+  mapper-locations: mapper/*.xml
+  configuration:
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+    default-statement-timeout: 3000
+
+## App Properties
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 604800000

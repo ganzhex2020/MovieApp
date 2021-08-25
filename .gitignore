@@ -1,0 +1,4 @@
+# Project exclude paths
+/auth/target/
+/biz/target/
+/gateway/target/
